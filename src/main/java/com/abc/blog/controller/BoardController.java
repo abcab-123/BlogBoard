@@ -19,7 +19,7 @@ public class BoardController {
 
 	// @AuthenticationPrincipal PrincipalDetail principal
 	@GetMapping({ "", "/" })
-	public String index(Model model, @PageableDefault(size = 3, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) { // 컨트롤러에서 세션을 어떻게 찾는지
+	public String index(Model model, @PageableDefault(size = 10, sort = "id", direction = Sort.Direction.DESC) Pageable pageable) { // 컨트롤러에서 세션을 어떻게 찾는지
 		// WEB-INF/views/index.jsp
 		model.addAttribute("boards", boardService.글목록(pageable));
 		return "index"; // viewResolver 작동
