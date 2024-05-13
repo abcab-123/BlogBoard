@@ -19,21 +19,21 @@
 </head>
 <body>
 
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 		<a class="navbar-brand" href="/">블로그</a>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+		<div class="collapse navbar-collapse" id="navbarNav">
 			<c:choose>
 				<c:when test="${empty principal}">
-					<ul class="navbar-nav">
+					<ul class="navbar-nav ml-auto">
 						<li class="nav-item"><a class="nav-link" href="/auth/loginForm">로그인</a></li>
 						<li class="nav-item"><a class="nav-link" href="/auth/joinForm">회원가입</a></li>
 					</ul>
 				</c:when>
 				<c:otherwise>
-					<ul class="navbar-nav">
+					<ul class="navbar-nav ml-auto">
 						<li class="nav-item"><a class="nav-link" href="/board/saveForm">글쓰기</a></li>
 						<li class="nav-item"><a class="nav-link" href="/user/updateForm">회원정보</a></li>
 						<li class="nav-item"><a class="nav-link" href="/logout">로그아웃</a></li>
@@ -43,3 +43,5 @@
 		</div>
 	</nav>
 	<br />
+</body>
+</html>
