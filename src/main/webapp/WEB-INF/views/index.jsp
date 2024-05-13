@@ -6,14 +6,22 @@
 <div class="container">
 
 	<!-- Board Listings -->
-	<c:forEach var="board" items="${boards.content}">
-		<div class="card m-2">
-			<div class="card-body">
-				<h4 class="card-title">${board.title}</h4>
-				<a href="/board/${board.id}" class="btn btn-primary">상세보기</a>
-			</div>
-		</div>
-	</c:forEach>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th scope="col">No</th>
+				<th scope="col">제목</th>
+			</tr>
+		</thead>
+		<tbody>
+			<c:forEach var="board" items="${boards.content}">
+				<tr>
+					<th scope="row">${board.id}</th>
+					<td style="text-align: left;"><a href="/board/${board.id}">${board.title}</a></td>
+				</tr>
+			</c:forEach>
+		</tbody>
+	</table>
 
 	<!-- Pagination -->
 	<nav aria-label="Page navigation">
